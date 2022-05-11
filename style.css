@@ -80,11 +80,35 @@ html {
 
 .weapon {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
     margin: 0.5rem 0rem 3rem 0rem;
 }
 
+.btn-rock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.btn-paper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.btn-scissors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
 button {
+    display: flex;
     width: 5rem;
     height: 5rem;
     border-radius: 1rem;
@@ -101,10 +125,53 @@ footer {
     gap: 4px;
     width: 100%;
     padding-bottom: 10px;
-    font-size: 20px;
+    font-size: 0.8rem;
     font-family: 'Hind Madurai', sans-serif;
 }
 
-
+@media (min-width: 500px) {
+    .header {
+        height: 9rem;
+    }
+    .header-h2 {
+        font-size: 3.2rem;
+        letter-spacing: 0.2rem;
+    }
+    .section-p1 {
+        margin: 1rem 0rem 0rem 0rem;
+        font-size: 2rem;
+    }
+    .section-p2 {
+        font-size: 1.5rem;
+    }
+    .container{
+        gap: 8rem;
+    }
+    .player-choose {
+        margin-left: 2rem;
+        font-size: 5rem;
+    }
+    .computer-choose {
+        margin-left: 3rem;
+        font-size: 5rem;
+    }
+    .player-situation {
+        font-size: 1.5rem;
+    }
+    .computer-situation {
+        font-size: 1.5rem;
+    }
+    button {
+        height: 8rem;
+        width: 8rem;
+    }
+    .weapon {
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+    footer {
+        font-size: 1rem;
+    }
+}
 
 
