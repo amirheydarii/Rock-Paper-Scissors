@@ -1,36 +1,39 @@
-let player1Counter = 0;
-let player2Counter = 0;
+// logic of game
 
-let item = ["ROCK"];
+let item = ["ROCK", "PAPER", "SCISSORS"];
 
 function getRandom() {
   let ramdom = item[Math.floor(Math.random() * item.length)];
   return ramdom;
 }
 
-function playRound(player1Selection, player2Selection) {
+let playerCounter = 0;
+let computerCounter = 0;
+
+function playRound(playerSelection, computerSelection) {
   if (
-    (player1Selection === "ROCK" && player2Selection === "SCISSORS") ||
-    (player1Selection === "SCISSORS" && player2Selection === "PAPER") ||
-    (player1Selection === "PAPER" && player2Selection === "ROCK")
+    (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
+    (playerSelection === "SCISSORS" && computerSelection === "PAPER") ||
+    (playerSelection === "PAPER" && computerSelection === "ROCK")
   ) {
-    player1Counter++;
-    console.log("player1 win");
+    playerCounter++;
+    result.textContent = "You win";
   }
   if (
-    (player2Selection === "ROCK" && player1Selection === "SCISSORS") ||
-    (player2Selection === "SCISSORS" && player1Selection === "PAPER") ||
-    (player2Selection === "PAPER" && player1Selection === "ROCK")
+    (computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
+    (computerSelection === "SCISSORS" && playerSelection === "PAPER") ||
+    (computerSelection === "PAPER" && playerSelection === "ROCK")
   ) {
-    player2Counter++;
-    console.log("player1 lose");
+    computerCounter++;
+    result.textContent = "You lose";
   }
-  if (player1Selection === player2Selection) {
+  if (playerSelection === computerSelection) {
     tie = "tie";
-    console.log("tie");
+    result.textContent = "Tie";
   }
 }
 
+// DOM and UI
 let result = document.querySelector(".section-p1");
 let situation = document.querySelector(".section-p2");
 let playerChoose = document.querySelector(".player-choose");
@@ -45,7 +48,36 @@ playerRock.addEventListener("click", () => handleClick("ROCK"));
 playerpaper.addEventListener("click", () => handleClick("PAPER"));
 playerScissors.addEventListener("click", () => handleClick("SCISSORS"));
 
-function handleClick(player1Selection) {
-  let player2Selection = getRandom();
-  playRound(player1Selection, player2Selection);
+// show selection of player and computer.
+
+function updateValue(playerSelection, computerSelection) {
+  switch (playerSelection) {
+    case "ROCK":
+      playerChoose.textContent = "👊";
+      break;
+    case "PAPER":
+      playerChoose.textContent = "✋";
+      break;
+    case "SCISSORS":
+      playerChoose.textContent = "✌️";
+      break;
+  }
+
+  switch (computerSelection) {
+    case "ROCK":
+      computerChoose.textContent = "👊";
+      break;
+    case "PAPER":
+      computerChoose.textContent = "✋";
+      break;
+    case "SCISSORS":
+      computerChoose.textContent = "✌️";
+      break;
+  }
+}
+
+function handleClick(playerSelection) {
+  let computerSelection = getRandom();
+  playRound(playerSelection, computerSelection);
+  updateValue(playerSelection, computerSelection);
 }
