@@ -98,10 +98,10 @@ function updateScore() {
     result.textContent = "You win 😍";
   }
   if (ronudWnner === "computer") {
-    result.textContent = "You lose 🫤";
+    result.textContent = "You lose 😞";
   }
   if (ronudWnner === "tie") {
-    result.textContent = "it's a tie 🫡";
+    result.textContent = "it's a tie 🙂";
   }
 
   playerSituation.textContent = `player: ${playerCounter}`;
@@ -147,7 +147,7 @@ function closeMassage() {
 function setShowMassage() {
   return playerCounter > computerCounter
     ? (restartMassage.textContent = "You win 😍")
-    : (restartMassage.textContent = "You lost 🫤");
+    : (restartMassage.textContent = "You lost 😞");
 }
 
 // restart game
