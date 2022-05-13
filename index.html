@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="/style.css">
-    <script src="/app.js" defer ></script>
     <title>Roc Paper Scissors</title>
 </head>
 <body class="body">
@@ -35,13 +34,14 @@
         <footer>Copyright <span class="copyright">©</span>
              Amir Heydari
         </footer>
-        <div class="modal active">
-            <p class="restart-massage">you lose!!!</p>
-            <button class="btn-restart">play again?</button>
+        <div class="modal active" id="endgamemodal">
+            <p class="restart-massage" id="endgamemag">you lose!!!</p>
+            <button class="btn-restart" id="restartbtn">play again?</button>
         </div>
-        <div class="overlay active"></div>
+        <div class="overlay active" id="overlay"></div>
         
 
     </main>
+    <script src="/app.js" ></script>
 </body>
 </html>
