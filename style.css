@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Hind+Madurai:wght@500&display=swap');
 
+
 html {
     /* footer support */
     position: relative;
@@ -107,8 +108,8 @@ html {
     font-size: 3rem;
 }
 
-button {
-    display: flex;
+.button {
+    background-color: rgb(218, 218, 218);
     width: 5rem;
     height: 5rem;
     border-radius: 1rem;
@@ -128,6 +129,69 @@ footer {
     font-size: 0.8rem;
     font-family: 'Hind Madurai', sans-serif;
 }
+
+.button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+/* over game */
+
+.modal {
+    font-family:'Hind Madurai', sans-serif;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(145, 145, 145);
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out; 
+}
+
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.restart-massage{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.btn-restart {
+    font-family:'Hind Madurai', sans-serif;
+    background-color: rgb(64, 64, 64);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.btn-restart:hover {
+    background-color: rgb(138, 138, 138);
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
 
 @media (min-width: 500px) {
     .header {
@@ -161,7 +225,7 @@ footer {
     .computer-situation {
         font-size: 1.5rem;
     }
-    button {
+    .button {
         height: 8rem;
         width: 8rem;
     }
@@ -171,6 +235,15 @@ footer {
     }
     footer {
         font-size: 1rem;
+    }
+    .modal{
+        width: 250px;
+    }
+    .restart-massage{
+        font-size: 2.5rem;
+    }
+    .btn-restart{
+        font-size: 2rem;
     }
 }
 
