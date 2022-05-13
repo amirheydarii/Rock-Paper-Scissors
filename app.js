@@ -25,7 +25,6 @@ function playRound(playerSelection, computerSelection) {
     tie = "tie";
     ronudWnner = "tie";
   }
-  updateMassageScore(ronudWnner, playerSelection, computerSelection);
 }
 
 function getRandom() {
@@ -41,9 +40,10 @@ function getRandom() {
 }
 
 function isOverGame() {
-  return playerCounter === 5 || computerCounter === 5
+  return playerCounter === 5 || computerCounter === 5;
 }
 // DOM and UI
+
 let result = document.querySelector(".section-p1");
 let situation = document.querySelector(".section-p2");
 let playerChoose = document.querySelector(".player-choose");
@@ -63,21 +63,6 @@ playerpaper.addEventListener("click", () => handleClick("PAPER"));
 playerScissors.addEventListener("click", () => handleClick("SCISSORS"));
 buttonRestart.addEventListener("click", restartGame);
 overlay.addEventListener("click", closeMassage);
-
-
-// invoke game
-function handleClick(playerSelection) {
-  let computerSelection = getRandom();
-  playRound(playerSelection, computerSelection);
-  updateValue(playerSelection, computerSelection);
-  updateScore();
-  
-  if (isOverGame()) {
-    openEndgameModal()
-    setShowMassage()
-  }
-}
-
 
 // show selection of player and computer.
 
@@ -106,7 +91,6 @@ function updateValue(playerSelection, computerSelection) {
       break;
   }
 }
-
 
 // show the score
 function updateScore() {
@@ -147,37 +131,56 @@ function capitalize(string) {
 // over game
 
 function openEndgameModal() {
-  endgameModal.style.display = "block"
-  overlay.style.display = "block"
-  endgameModal.classList.add('active');
-  overlay.classList.add('active');
+  endgameModal.style.display = "block";
+  overlay.style.display = "block";
+  endgameModal.classList.add("active");
+  overlay.classList.add("active");
 }
 
 function closeMassage() {
-  endgameModal.classList.remove('active')
-  overlay.classList.remove('active')
+  endgameModal.style.display = "none";
+  overlay.style.display = "none";
+  endgameModal.classList.remove("active");
+  overlay.classList.remove("active");
 }
 
 function setShowMassage() {
   return playerCounter > computerCounter
-    ? (restartMassage.textContent = 'You win 😍')
-    : (restartMassage.textContent = 'You lost 🫤')
+    ? (restartMassage.textContent = "You win 😍")
+    : (restartMassage.textContent = "You lost 🫤");
 }
 
 // restart game
 
 function restartGame() {
-  endgameModal.style.display = "none"
-  overlay.style.display = "none"
+  endgameModal.style.display = "none";
+  overlay.style.display = "none";
   playerCounter = 0;
-  computerCounter = 0
+  computerCounter = 0;
   result.textContent = "Choose!";
-  situation.textContent = "First score more points wins the game."
-  playerSituation.textContent = "Player: 0"
-  computerSituation.textContent = "Computer: 0"
-  playerChoose.textContent = '?'
-  computerChoose.textContent = '?'
-  endgameModal.classList.remove('active')
-  overlay.classList.remove('active')
+  situation.textContent = "First score more points wins the game.";
+  playerSituation.textContent = "Player: 0";
+  computerSituation.textContent = "Computer: 0";
+  playerChoose.textContent = "?";
+  computerChoose.textContent = "?";
+  endgameModal.classList.remove("active");
+  overlay.classList.remove("active");
 }
 
+// invoke game
+function handleClick(playerSelection) {
+  if (isOverGame()) {
+    openEndgameModal();
+    return;
+  }
+  let computerSelection = getRandom();
+  playRound(playerSelection, computerSelection);
+  updateValue(playerSelection, computerSelection);
+  updateMassageScore(ronudWnner, playerSelection, computerSelection);
+  updateScore();
+
+  if (isOverGame()) {
+    openEndgameModal();
+    setShowMassage();
+  }
+}
