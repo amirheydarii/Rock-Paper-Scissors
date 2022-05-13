@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css" />
     <title>Roc Paper Scissors</title>
-</head>
-<body class="body">
+  </head>
+  <body class="body">
     <main>
-        <header class="header">
-            <h2 class="header-h2"> ROCK PAPER SCISSORS </h2>
-        </header>
-        <section class="section">
-            <p class="section-p1">Choose!</p>
-            <p class="section-p2">First score more points wins the game.</p>
-            <div class="container">
-                <div class="player-container">
-                    <p class="player-choose">?</p>
-                    <p class="player-situation">Player: 0 </p>
-                </div>
-                <div class="computer-container">
-                    <p class="computer-choose">?</p>
-                    <p class="computer-situation">Computer: 0</p> 
-                </div>
-            </div>
-            <div class="weapon">
-                <button class="btn-rock button">👊</button>
-                <button class="btn-paper button">✋</button>
-                <button class="btn-scissors button">✌️</button>
-            </div>
-        </section>
-        <footer>Copyright <span class="copyright">©</span>
-             Amir Heydari
-        </footer>
-        <div class="modal active" id="endgamemodal">
-            <p class="restart-massage" id="endgamemag">you lose!!!</p>
-            <button class="btn-restart" id="restartbtn">play again?</button>
+      <header class="header">
+        <h2 class="header-h2">ROCK PAPER SCISSORS</h2>
+      </header>
+      <section class="section">
+        <p class="section-p1">Choose!</p>
+        <p class="section-p2">First score more points wins the game.</p>
+        <div class="container">
+          <div class="player-container">
+            <p class="player-choose">?</p>
+            <p class="player-situation">Player: 0</p>
+          </div>
+          <div class="computer-container">
+            <p class="computer-choose">?</p>
+            <p class="computer-situation">Computer: 0</p>
+          </div>
         </div>
-        <div class="overlay active" id="overlay"></div>
-        
-
+        <div class="weapon">
+          <button class="btn-rock button">👊</button>
+          <button class="btn-paper button">✋</button>
+          <button class="btn-scissors button">✌️</button>
+        </div>
+      </section>
+      <footer>
+        Copyright <span class="copyright">©</span>
+        Amir Heydari
+      </footer>
+      <div class="modal active" id="endgamemodal">
+        <p class="restart-massage" id="endgamemag">you lose!!!</p>
+        <button class="btn-restart" id="restartbtn">play again?</button>
+      </div>
+      <div class="overlay active" id="overlay"></div>
     </main>
-    <script src="/app.js" ></script>
-</body>
+    <script src="/app.js"></script>
+  </body>
 </html>
